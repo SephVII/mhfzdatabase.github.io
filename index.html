@@ -2,9 +2,34 @@
 <html>
 <head>
   <title>My Custom Webpage</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to My Webpage!</h1>
-  <p>This is a sample paragraph.</p>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li>
+        <a href="#categories">Categories</a>
+        <ul class="dropdown">
+          <li><a href="#cat1">Category 1</a></li>
+          <li><a href="#cat2">Category 2</a></li>
+          <li><a href="#cat3">Category 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#about">About</a>
+        <ul class="dropdown">
+          <li><a href="#sub1">Subcategory 1</a></li>
+          <li><a href="#sub2">Subcategory 2</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Rest of your webpage content -->
+
+  <script src="script.js"></script>
 </body>
 </html>
+

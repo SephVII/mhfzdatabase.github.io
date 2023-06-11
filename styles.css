@@ -1,0 +1,45 @@
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li:hover > ul.dropdown {
+    display: block;
+  }
+  
+  nav ul ul.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #555;
+    min-width: 200px;
+    z-index: 1;
+  }
+  
+  nav ul ul.dropdown li {
+    display: block;
+  }
+  
+  nav ul ul.dropdown li a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul ul.dropdown li a:hover {
+    background-color: #666;
+  }
+  
