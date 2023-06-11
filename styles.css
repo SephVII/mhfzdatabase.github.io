@@ -21,7 +21,7 @@ nav ul {
     display: block;
   }
   
-  nav ul ul.dropdown {
+  nav ul ul.dropdown li:first-child {
     display: block;
     position: absolute;
     background-color: #555;
