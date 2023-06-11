@@ -22,7 +22,6 @@ nav ul {
   }
   
   nav ul ul.dropdown {
-    display: none;
     position: absolute;
     background-color: #555;
     min-width: 200px;
