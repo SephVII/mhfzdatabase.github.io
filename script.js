@@ -1,10 +1,16 @@
 window.addEventListener("DOMContentLoaded", function () {
-    var dropdownParents = document.querySelectorAll("nav ul li");
-    for (var i = 0; i < dropdownParents.length; i++) {
-      dropdownParents[i].addEventListener("mouseover", function () {
+    var dropdowns = document.getElementsByClassName("dropdown");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var subcategories = dropdowns[i].querySelectorAll("li");
+      for (var j = 0; j < subcategories.length; j++) {
+        if (j !== 0) {
+          subcategories[j].style.display = "none";
+        }
+      }
+      dropdowns[i].parentNode.addEventListener("mouseover", function () {
         this.querySelector("ul.dropdown").style.display = "block";
       });
-      dropdownParents[i].addEventListener("mouseout", function () {
+      dropdowns[i].parentNode.addEventListener("mouseout", function () {
         this.querySelector("ul.dropdown").style.display = "none";
       });
     }
