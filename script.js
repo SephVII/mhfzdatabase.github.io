@@ -8,6 +8,12 @@ window.addEventListener("DOMContentLoaded", function () {
           dropdown.style.display = "block";
         }
       });
+      dropdownParents[i].addEventListener("mouseout", function () {
+        var dropdown = this.querySelector("ul.dropdown");
+        if (dropdown) {
+          dropdown.style.display = "none";
+        }
+      });
     }
   
     function closeAllDropdowns() {
