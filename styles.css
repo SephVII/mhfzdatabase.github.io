@@ -17,7 +17,8 @@ nav ul {
     text-decoration: none;
   }
   
-  nav ul li:hover > ul.dropdown {
+  nav ul li:hover > ul.dropdown,
+  nav ul li.dropdown:hover > ul.dropdown {
     display: block;
   }
   
