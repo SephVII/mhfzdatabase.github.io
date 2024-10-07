@@ -65,3 +65,21 @@ header {
 .nav-item:hover .dropdown {
   display: block; /* Show dropdown when hovering */
 }
+
+/* Main Content (Hero Section) */
+.hero {
+  text-align: center;  /* Centers the text horizontally */
+  padding: 5em 2em;    /* Adds padding for spacing */
+  display: flex;
+  justify-content: center;  /* Centers the content horizontally */
+  align-items: center;      /* Centers content vertically */
+  min-height: 60vh;         /* Takes up most of the page height */
+}
+
+/* Footer */
+footer {
+  text-align: center;  /* Centers footer content horizontally */
+  padding: 1em 0;
+  background-color: #23272A; /* Matches the background */
+  color: #888888; /* Light gray text for contrast */
+}
