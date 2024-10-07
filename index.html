@@ -1,34 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Custom Webpage</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Hunter 2 Wiki</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li>
-        <a href="#categories">Categories</a>
-        <ul class="dropdown">
-          <li><a href="#cat1">Category 1</a></li>
-          <li><a href="#cat2">Category 2</a></li>
-          <li><a href="#cat3">Category 3</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#about">About</a>
-        <ul class="dropdown">
-          <li><a href="#sub1">Subcategory 1</a></li>
-          <li><a href="#sub2">Subcategory 2</a></li>
-        </ul>
-      </li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Rest of your webpage content -->
-
-  <script src="script.js"></script>
+    <header>
+        <h1>Monster Hunter 2 Wiki</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#weapons">Weapons</a></li>
+                <li><a href="#armor">Armor</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#events">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Current Events</h2>
+            <div class="event">
+                <h3>3★ Egg dream!</h3>
+                <p>Locale: Jungle</p>
+                <p>Goal: Deliver 3 Wyvern Eggs, Deliver 4 Carnivore Eggs</p>
+                <p>Requirement: HR 11+</p>
+            </div>
+            <h2>Shop Specials</h2>
+            <div class="shop-special">
+                <p>No shop specials currently active.</p>
+            </div>
+        </aside>
+        <main class="content">
+            <h2>Current Event Schedule</h2>
+            <table>
+                <tr>
+                    <th>Hours</th>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+                <tr>
+                    <td>12:00 AM</td>
+                    <td>Great Fishing Tournament!</td>
+                    <td>Egg dream!</td>
+                    <td>Bird Rebelion!</td>
+                    <td>Black Wolf Counterattack!</td>
+                    <td>Rare Golden Wyvern</td>
+                    <td>Felyne Arena!</td>
+                    <td>Castle Schrade Battle</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </main>
+    </div>
+    <footer>
+        <p>© 2024 Monster Hunter Wiki. All rights reserved.</p>
+    </footer>
 </body>
 </html>
