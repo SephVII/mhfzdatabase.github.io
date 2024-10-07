@@ -11,28 +11,21 @@ body {
   color: #FFFFFF; /* White text */
 }
 
-/* Header and Navigation */
+/* Center the Nav Categories */
 header {
-  display: flex;
-  justify-content: center; /* Centers the content horizontally */
-  padding: 1em 0;
-  background-color: #5865F2; /* Discord primary blue */
-}
-
-.navbar {
-  width: 100%;
-  max-width: 1200px; /* Optional: limit max width to avoid too much stretching */
+  background-color: #5865F2;
+  text-align: center; /* Centers content */
 }
 
 .nav-list {
   list-style: none;
-  display: flex;
-  justify-content: center; /* Centers the nav items */
+  display: inline-flex; /* Items in one row */
+  justify-content: center;
 }
 
 .nav-item {
   position: relative;
-  margin: 0 20px; /* Spacing between categories */
+  margin: 0 20px; /* Space between categories */
 }
 
 .nav-item a {
@@ -40,58 +33,30 @@ header {
   text-decoration: none;
   padding: 0.5em 1em;
   display: block;
-  text-align: center;
 }
 
 .nav-item a:hover {
-  background-color: #4E5AC7; /* Darker shade of primary blue for hover */
-  border-radius: 5px; /* Adds a bit of a rounded corner for hover */
+  background-color: #4E5AC7;
+  border-radius: 5px;
 }
 
 /* Dropdown Menu */
 .dropdown {
+  display: none;
   position: absolute;
-  background-color: #5865F2; /* Same as nav bar */
-  list-style: none;
   top: 100%;
-  left: 0;
-  min-width: 150px;
-  display: none; /* Hidden by default */
-  z-index: 1000;
+  background-color: #5865F2;
+}
+
+.dropdown li {
+  margin: 0;
 }
 
 .dropdown li a {
-  padding: 0.5em;
+  padding: 0.5em 1em;
   display: block;
 }
 
-.dropdown li a:hover {
-  background-color: #4E5AC7;
-}
-
 .nav-item:hover .dropdown {
-  display: block; /* Show dropdown on hover */
-}
-
-/* Main content styling */
-.hero {
-  text-align: center;
-  padding: 4em 2em;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-}
-
-.hero p {
-  font-size: 1.2em;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1em 0;
-  background-color: #23272A; /* Same dark gray as the background */
-  color: #888888; /* Lighter gray for the footer text */
+  display: block;
 }
