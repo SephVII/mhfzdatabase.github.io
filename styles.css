@@ -17,15 +17,16 @@ header {
   text-align: center; /* Centers content */
 }
 
+/* Ensure nav-list items are in a row */
 .nav-list {
   list-style: none;
-  display: inline-flex; /* Items in one row */
-  justify-content: center;
+  display: flex; /* Aligns items in a row */
+  justify-content: center; /* Centers the categories */
 }
 
 .nav-item {
   position: relative;
-  margin: 0 20px; /* Space between categories */
+  margin: 0 20px; /* Adds space between categories */
 }
 
 .nav-item a {
@@ -40,12 +41,15 @@ header {
   border-radius: 5px;
 }
 
-/* Dropdown Menu */
+/* Style for dropdown */
 .dropdown {
   display: none;
   position: absolute;
   top: 100%;
+  left: 0;
   background-color: #5865F2;
+  list-style: none;
+  padding: 0;
 }
 
 .dropdown li {
@@ -55,8 +59,9 @@ header {
 .dropdown li a {
   padding: 0.5em 1em;
   display: block;
+  white-space: nowrap;
 }
 
 .nav-item:hover .dropdown {
-  display: block;
+  display: block; /* Show dropdown when hovering */
 }
