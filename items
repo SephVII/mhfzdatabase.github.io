@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Items List</title>
+</head>
+<body>
+    <header>
+        <h1>Items</h1>
+        <input type="text" id="search" placeholder="Search for items..." onkeyup="searchItems()">
+    </header>
+    <main>
+        <ul id="item-list">
+            <li>
+                <a href="#" onclick="openModal('potionModal')">
+                    <img src="items/potion.png" width="32" height="32"> Potion
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openModal('manaPotionModal')">
+                    <img src="items/potion.png" width="32" height="32"> Mega Potion
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openModal('ironSwordModal')">
+                    <img src="items/potion.png" width="32" height="32"> Iron Sword
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openModal('steelArmorModal')">
+                    <img src="items/potion.png" width="32" height="32"> Steel Armor
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openModal('woodenShieldModal')">
+                    <img src="items/potion.png" width="32" height="32"> Wooden Shield
+                </a>
+            </li>
+            
+            <!-- Add more items as needed -->
+        </ul>
+    </main>
+
+    <!-- Modal structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Game Wiki</p>
+    </footer>
+
+    <script>
+        function searchItems() {
+            const input = document.getElementById('search');
+            const filter = input.value.toLowerCase();
+            const ul = document.getElementById("item-list");
+            const li = ul.getElementsByTagName('li');
+
+            for (let i = 0; i < li.length; i++) {
+                const a = li[i].getElementsByTagName("a")[0];
+                const txtValue = a.textContent || a.innerText;
+                li[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+
+        function openModal(item) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const description = document.getElementById('modal-description');
+
+            // Set content based on the clicked item
+            if (item === 'potionModal') {
+                title.innerText = 'Potion';
+                description.innerText = 'Restores health when consumed.';
+            } else if (item === 'manaPotionModal') {
+                title.innerText = 'Mana Potion';
+                description.innerText = 'Restores mana when consumed.';
+            } else if (item === 'ironSwordModal') {
+                title.innerText = 'Iron Sword';
+                description.innerText = 'A basic sword made of iron.';
+            } else if (item === 'steelArmorModal') {
+                title.innerText = 'Steel Armor';
+                description.innerText = 'Armor made of steel for better protection.';
+            } else if (item === 'woodenShieldModal') {
+                title.innerText = 'Wooden Shield';
+                description.innerText = 'A shield made of wood.';
+            }
+
+            modal.style.display = "block"; // Show the modal
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = "none"; // Hide the modal
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // Sorting function
+        window.onload = function() {
+            sortItems();
+        };
+
+        function sortItems() {
+            const ul = document.getElementById("item-list");
+            let itemsArray = Array.from(ul.getElementsByTagName("li"));
+
+            // Sort the items based on the text content of each <a> tag
+            itemsArray.sort(function(a, b) {
+                const textA = a.getElementsByTagName("a")[0].textContent.toLowerCase();
+                const textB = b.getElementsByTagName("a")[0].textContent.toLowerCase();
+                return textA.localeCompare(textB);
+            });
+
+            // Remove current list items
+            ul.innerHTML = "";
+
+            // Append the sorted items
+            for (let i = 0; i < itemsArray.length; i++) {
+                ul.appendChild(itemsArray[i]);
+            }
+        }
+    </script>
+</body>
+</html>
