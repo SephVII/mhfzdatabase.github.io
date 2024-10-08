@@ -1,85 +1,150 @@
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #23272A; /* Discord dark gray */
-  color: #FFFFFF; /* White text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2C2F33; /* Dark Grey background */
+    color: #FFFFFF; /* White text */
 }
 
-/* Center the Nav Categories */
 header {
-  background-color: #5865F2;
-  text-align: center; /* Centers content */
+    background: #5865F2; /* Blurple header */
+    color: #FFFFFF; /* White text */
+    padding: 1em;
+    text-align: center;
 }
 
-/* Ensure nav-list items are in a row */
-.nav-list {
-  list-style: none;
-  display: flex; /* Aligns items in a row */
-  justify-content: center; /* Centers the categories */
+nav {
+    text-align: center; /* Center the navigation */
 }
 
-.nav-item {
-  position: relative;
-  margin: 0 20px; /* Adds space between categories */
+.categories {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    list-style-type: none;
+    padding: 0;
 }
 
-.nav-item a {
-  color: #FFFFFF;
-  text-decoration: none;
-  padding: 0.5em 1em;
-  display: block;
+.categories li {
+    position: relative; /* Needed for the absolute positioning of subcategories */
+    margin: 0 20px; /* Space between categories */
 }
 
-.nav-item a:hover {
-  background-color: #4E5AC7;
-  border-radius: 5px;
+.categories a {
+    color: #FFFFFF; /* White text */
+    text-decoration: none;
+    padding: 10px 15px;
 }
 
-/* Style for dropdown */
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #5865F2;
-  list-style: none;
-  padding: 0;
+.categories a:hover {
+    color: #FDD04D; /* Yellow on hover */
 }
 
-.dropdown li {
-  margin: 0;
+/* Subcategories styling */
+.subcategories {
+    display: none; /* Hide subcategories by default */
+    position: absolute; /* Position them absolutely relative to the parent */
+    top: 100%; /* Place them below the parent */
+    left: 0;
+    background: #2C2F33; /* Dark Grey background */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Ensure they appear above other content */
 }
 
-.dropdown li a {
-  padding: 0.5em 1em;
-  display: block;
-  white-space: nowrap;
+.categories li:hover .subcategories {
+    display: block; /* Show subcategories on hover */
 }
 
-.nav-item:hover .dropdown {
-  display: block; /* Show dropdown when hovering */
+.subcategories li {
+    margin: 5px 0; /* Space between subcategories */
 }
 
-/* Main Content (Hero Section) */
-.hero {
-  text-align: center;  /* Centers the text horizontally */
-  padding: 5em 2em;    /* Adds padding for spacing */
-  display: flex;
-  justify-content: center;  /* Centers the content horizontally */
-  align-items: center;      /* Centers content vertically */
-  min-height: 60vh;         /* Takes up most of the page height */
-}
-
-/* Footer */
 footer {
-  text-align: center;  /* Centers footer content horizontally */
-  padding: 1em 0;
-  background-color: #23272A; /* Matches the background */
-  color: #888888; /* Light gray text for contrast */
+    text-align: center;
+    padding: 1em;
+    background: #99AAB5; /* Light Grey footer */
+    color: #2C2F33; /* Dark Grey text */
+}
+
+header input[type="text"] {
+    width: 50%; /* Adjust width as needed */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #99AAB5; /* Light Grey border */
+    background: #2C2F33; /* Dark Grey background */
+    color: #FFFFFF; /* White text */
+    margin-bottom: 20px; /* Spacing between search input and item list */
+}
+
+#item-list {
+    display: grid;
+    grid-auto-flow: row; /* Ensure items flow top-to-bottom first */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible number of columns */
+    grid-template-rows: repeat(auto-fill, minmax(50px, auto)); /* Flexible number of rows */
+    gap: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#item-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Grid line color */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background for each item */
+    transition: background-color 0.3s;
+}
+
+#item-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+}
+
+#item-list img {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+}
+
+#item-list a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #1b1b1b;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
