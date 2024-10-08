@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Wiki</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Game Wiki</title>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="#">Weapons</a>
-          <ul class="dropdown">
-            <li><a href="#">Swords</a></li>
-            <li><a href="#">Bows</a></li>
-            <li><a href="#">Axes</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#">Items</a>
-          <ul class="dropdown">
-            <li><a href="#">Consumables</a></li>
-            <li><a href="#">Crafting Materials</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#">Armor</a>
-          <ul class="dropdown">
-            <li><a href="#">Light Armor</a></li>
-            <li><a href="#">Heavy Armor</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#">Quests</a>
-          <ul class="dropdown">
-            <li><a href="#">Main Story</a></li>
-            <li><a href="#">Side Quests</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-  <section class="hero">
-    <h1>Welcome to the Game Wiki</h1>
-    <p>Search and explore items, weapons, and more...</p>
-  </section>
-</main>
-
-<footer>
-  <p>© 2024 Game Wiki. All rights reserved.</p>
-</footer>
-
+    <header>
+        <h1>Game Wiki</h1>
+        <nav>
+            <ul class="categories">
+                <li>
+                    <a href="items/items.html">Items</a> <!-- Updated to link to items.html -->
+                    <ul class="subcategories">
+                        <li><a href="#swords">Swords</a></li>
+                        <li><a href="#bows">Bows</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#items">Items</a>
+                    <ul class="subcategories">
+                        <li><a href="#potions">Potions</a></li>
+                        <li><a href="#armor">Armor</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#characters">Characters</a>
+                    <ul class="subcategories">
+                        <li><a href="#heroes">Heroes</a></li>
+                        <li><a href="#villains">Villains</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About the Game</h2>
+            <p>Information about the game.</p>
+        </section>
+        <section id="guides">
+            <h2>Guides</h2>
+            <p>Gameplay guides.</p>
+        </section>
+        <section id="characters">
+            <h2>Characters</h2>
+            <p>Details about characters.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Game Wiki</p>
+    </footer>
 </body>
 </html>
